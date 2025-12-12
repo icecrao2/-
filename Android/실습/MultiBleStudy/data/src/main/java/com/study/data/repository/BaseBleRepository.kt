@@ -72,6 +72,7 @@ abstract class BaseBleRepository(
 
     @RequiresPermission(Manifest.permission.BLUETOOTH_CONNECT)
     fun disconnectDevice() {
+        if(connectedDevice == null) return
         gattManager.disconnect(connectedDevice!!.toBleDevice())
         clear()
     }

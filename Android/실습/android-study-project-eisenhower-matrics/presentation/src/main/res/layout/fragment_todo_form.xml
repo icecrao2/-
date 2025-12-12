@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.study.presentation.feature.eisenhower.viewmodel.TodoFormViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="20dp"
+        tools:context=".feature.eisenhower.fragment.AddTodoFragment">
+
+
+        <com.study.presentation.common.view.LabelContainerView
+            android:id="@+id/name_edit_text_container"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"
+            app:labelText="@string/name_label"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/days_required_edit_text_container">
+
+            <EditText
+                style="@style/StyleEditText"
+                android:id="@+id/name_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@{vm.name}"
+                android:hint="@string/name_edit_text_hint"/>
+        </com.study.presentation.common.view.LabelContainerView>
+
+
+        <com.study.presentation.common.view.LabelContainerView
+            android:id="@+id/days_required_edit_text_container"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginVertical="10dp"
+            app:layout_constraintTop_toBottomOf="@id/name_edit_text_container"
+            app:layout_constraintBottom_toTopOf="@id/deadline_edit_text_container"
+            app:labelText="@string/required_days_label" >
+
+            <EditText
+                style="@style/StyleEditText"
+                android:id="@+id/days_required_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
+                android:text="@{vm.daysRequired}"
+                android:hint="@string/required_days_edit_text_hint"/>
+        </com.study.presentation.common.view.LabelContainerView>
+
+        <com.study.presentation.common.view.LabelContainerView
+            android:id="@+id/deadline_edit_text_container"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginVertical="10dp"
+            app:layout_constraintTop_toBottomOf="@id/days_required_edit_text_container"
+            app:layout_constraintBottom_toTopOf="@id/important_checkbox_container"
+            app:labelText="@string/deadline_label" >
+
+            <EditText
+                style="@style/StyleEditText"
+                android:id="@+id/deadline_required_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="date"
+                android:text="@{vm.deadlineText}"
+                android:hint="@string/deadline_edit_text_hint"/>
+        </com.study.presentation.common.view.LabelContainerView>
+
+        <com.study.presentation.common.view.LabelContainerView
+            android:id="@+id/important_checkbox_container"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginVertical="10dp"
+            app:layout_constraintTop_toBottomOf="@id/deadline_edit_text_container"
+            app:layout_constraintBottom_toTopOf="@id/eisenhower_type_container"
+            app:labelText="@string/is_important_label" >
+
+            <CheckBox
+                android:id="@+id/important_checkbox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:checked="@{vm.important}"
+                android:text=" "/>
+
+        </com.study.presentation.common.view.LabelContainerView>
+
+
+        <com.study.presentation.common.view.LabelContainerView
+            android:id="@+id/eisenhower_type_container"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginVertical="10dp"
+            app:layout_constraintTop_toBottomOf="@id/important_checkbox_container"
+            app:labelText="@string/eisenhower_type_label" >
+
+            <EditText
+                style="@style/StyleEditText"
+                android:id="@+id/eisenhower_type_edit_text"
+                android:enabled="false"
+                android:hint="Eisenhower type"
+                android:text="@{vm.eisenhowerType.code}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.study.presentation.common.view.LabelContainerView>
+
+        <EditText
+            android:id="@+id/description_edit_text"
+            style="@style/StyleEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:singleLine="false"
+            android:gravity="top|start"
+            android:padding="20dp"
+            android:hint="@string/description_edit_text_hint"
+            android:lines="3"
+            android:maxLines="3"
+            android:scrollbars="vertical"
+            android:layout_marginVertical="10dp"
+            android:text="@{vm.description}"
+            app:layout_constraintTop_toBottomOf="@id/eisenhower_type_container" />
+
+        <Button
+            style="@style/DefaultButtonView"
+            android:id="@+id/submit_button"
+            android:layout_width="match_parent"
+            android:text="@string/submit_button"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

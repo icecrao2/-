@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="DefaultCardViewStyle" >
+        <item name="background">@drawable/shape_card_container</item>
+        <item name="backgroundColor">@android:color/transparent</item>
+        <item name="android:padding">10dp</item>
+        <item name="cardCornerRadius">12dp</item>
+    </style>
+</resources>

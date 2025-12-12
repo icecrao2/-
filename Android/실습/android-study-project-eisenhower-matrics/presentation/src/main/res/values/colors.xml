@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="urgent_important">#04A283</color>
+    <color name="urgent_not_important">#FFB98B</color>
+    <color name="not_urgent_important">#53D9E8</color>
+    <color name="not_urgent_not_important">#FF7C7C</color>
+</resources>

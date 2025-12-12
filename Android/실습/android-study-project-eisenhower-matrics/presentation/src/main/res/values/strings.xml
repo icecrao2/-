@@ -1,0 +1,20 @@
+<resources>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="urgent_important_list_title">Do This Now</string>
+    <string name="urgent_not_important_list_title">Hand This Off</string>
+    <string name="not_urgent_important_list_title">Plan For This</string>
+    <string name="not_urgent_not_important_list_title">Let It Go</string>
+
+    <string name="name_label">이름</string>
+    <string name="name_edit_text_hint">이름을 입력하세요</string>
+    <string name="required_days_label">작업소요기간</string>
+    <string name="required_days_edit_text_hint">작업 소요 기간을 일 단위로 입력하세요</string>
+    <string name="deadline_label">데드라인</string>
+    <string name="deadline_edit_text_hint">데드라인을 입력하세요</string>
+    <string name="is_important_label">중요 여부</string>
+    <string name="eisenhower_type_label">아이젠하워 타입</string>
+    <string name="eisenhower_type_edit_text_hint">Eisenhower type</string>
+    <string name="description_edit_text_hint">자세한 내용을 입력하세요</string>
+    <string name="submit_button">submit</string>
+</resources>
